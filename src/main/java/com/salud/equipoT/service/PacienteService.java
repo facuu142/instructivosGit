@@ -17,14 +17,14 @@ public class PacienteService {
     @Autowired
     private PacienteRepository pacienteRepository;
 
-    public void crearPaciente(Long dni, String nombre, String email, String password, ObraSocial obraSocial, Rol rol) {
+    public void crearPaciente(Long dni, String nombre, String email, String password, ObraSocial obraSocial) {
         Paciente paciente = new Paciente();
         paciente.setDni(dni);
         paciente.setNombre(nombre);
         paciente.setEmail(email);
         paciente.setPassword(password);
         paciente.setObraSocial(obraSocial);
-        paciente.setRol(rol);
+        paciente.setRol(Rol.PACIENTE);
         
         pacienteRepository.save(paciente);
 
@@ -48,7 +48,7 @@ public class PacienteService {
 }
 public List<Paciente> listarPacientesObraSocial(ObraSocial obraSocial){
 
-return pacienteRepository.findByObraSocial(obraSocial);
+return pacienteRepository.findByObraSocial(obraSocial.getId());
 }
 
 }

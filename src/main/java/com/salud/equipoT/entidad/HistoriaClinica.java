@@ -1,8 +1,6 @@
 package com.salud.equipoT.entidad;
-
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,11 +24,13 @@ public class HistoriaClinica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
     @JoinColumn(name = "paciente_id" , referencedColumnName = "id" ,nullable = false)
     private Paciente paciente;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Consulta> lineaHistoriaClinica;
+
+    @JoinColumn(name = "consultas_id", referencedColumnName = "id")
+    @OneToMany()
+    private List<Consulta> consultas;
 
 
 }
