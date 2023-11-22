@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,10 +32,10 @@ public class Paciente {
     @Column(name = "password")
     private String password;
     @OneToOne()
-    @Column(name = "obraSocial")
+    @JoinColumn(name = "obraSocial_id" ,referencedColumnName = "id")
     private ObraSocial obraSocial;
     @OneToOne()
-    @Column(name = "hitoriaClinica")
+    @JoinColumn(name = "historiaClinica_id" ,referencedColumnName = "id")
     private HistoriaClinica hitoriaClinica;
     @Enumerated(EnumType.STRING)
     private Rol rol;
