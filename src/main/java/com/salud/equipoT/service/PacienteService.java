@@ -51,4 +51,13 @@ public List<Paciente> listarPacientesObraSocial(ObraSocial obraSocial){
 return pacienteRepository.findByObraSocial(obraSocial.getId());
 }
 */
+    public void validar(Long dni, String nombre, String email, String password) throws Exception{
+
+        if(nombre.isBlank()){
+            throw new Exception("el nombre no puede ser nulo o estar vacio");
+        }
+        if(email.isBlank()){
+            
+        }
+    }
 }

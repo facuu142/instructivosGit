@@ -15,7 +15,7 @@
             <input type="text" name="email" placeholder="Email" required><br/>
             <input type="text" name="password" placeholder="Password" required>
             <br>
-            <select name="editorialId">
+            <select name="obraSocialId">
                 <option>Seleccionar ObraSocial</option>
                 <option th:each="obraSocial :${ObraSociales}"
                     th:value="${obraSocial.id}"
