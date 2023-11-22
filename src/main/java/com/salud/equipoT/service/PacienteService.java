@@ -41,14 +41,14 @@ public class PacienteService {
 
         return pacienteRepository.findById(dni).orElse(null);
     }
-    public List<Consulta> buscarHistoriaClinica(Long dni){
+   /*public List<Consulta> buscarHistoriaClinica(Long dni){
 
-        return pacienteRepository.findHistoriClinica(dni);
+        return pacienteRepository.findHistoriaClinica(dni);
 
 }
 public List<Paciente> listarPacientesObraSocial(ObraSocial obraSocial){
 
 return pacienteRepository.findByObraSocial(obraSocial.getId());
 }
-
+*/
 }

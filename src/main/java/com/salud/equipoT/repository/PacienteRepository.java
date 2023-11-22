@@ -17,12 +17,13 @@ public interface PacienteRepository extends JpaRepository<Paciente,Long>{
 
     Optional<Paciente> findById(Long dni);
     
-    @Query("SELECT Paciente From Paciente P WHERE P.email =: 'email'")
+    @Query("SELECT P From Paciente P WHERE P.email =:email")
     Paciente findByEmail(@Param ("email") String email);
 
-    @Query("SELECT HistoriClinica FROM Paciente P WHERE P.id = :id")
-    List<Consulta> findHistoriClinica(@Param ("id") Long dni);
+    /*@Query("SELECT historiaClinica_id FROM Paciente P WHERE P.id = :id")
+    List<Consulta> findHistoriaClinica(@Param ("id") Long dni);
     
-    @Query("SELECT * FROM Paciente P WHERE P.obraSocial = :obraSocial")
+    @Query("SELECT P FROM Paciente P WHERE P.obra_social_id = :obraSocial")
     List<Paciente> findByObraSocial(@Param ("obraSocial") Long obraSocial);
+*/
 }

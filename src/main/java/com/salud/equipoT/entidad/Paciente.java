@@ -22,7 +22,6 @@ public class Paciente {
 
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long dni;
     @Column(name = "nombre")

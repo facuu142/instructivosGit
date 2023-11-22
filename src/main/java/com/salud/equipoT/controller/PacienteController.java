@@ -2,6 +2,7 @@ package com.salud.equipoT.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -25,9 +26,7 @@ public class PacienteController {
     @PostMapping("/registro")
     public String registro(@RequestAttribute Long dni,@RequestAttribute  String nombre,@RequestAttribute  String email,@RequestAttribute  String password, ObraSocial obraSocial){
 
-       pacienteService.crearPaciente(dni, nombre, email, password, obraSocial);;
-        
-        
+       pacienteService.crearPaciente(dni, nombre, email, password, obraSocial);
 
         return "registro.html";
     }
