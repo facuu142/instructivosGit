@@ -25,9 +25,9 @@ public class PacienteController {
     }    
 
     @PostMapping("/registro")
-    public String registro(@RequestParam Long dni,@RequestParam  String nombre,@RequestParam  String email,@RequestParam  String password, ObraSocial obraSocial){
+    public String registro(@RequestParam Long id,@RequestParam  String nombre,@RequestParam  String email,@RequestParam  String password, Long obraSocialId){
         
-       pacienteService.crearPaciente(dni, nombre, email, password, obraSocial);
+       pacienteService.crearPaciente(id, nombre, email, password, obraSocialId);
 
         return "registro.html";
     }

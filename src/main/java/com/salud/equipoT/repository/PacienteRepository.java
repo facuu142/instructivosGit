@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.salud.equipoT.entidad.Consulta;
 import com.salud.equipoT.entidad.Paciente;
 
+import java.lang.annotation.Native;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,10 +21,10 @@ public interface PacienteRepository extends JpaRepository<Paciente,Long>{
     @Query("SELECT P From Paciente P WHERE P.email =:email")
     Paciente findByEmail(@Param ("email") String email);
 
-    @Query("SELECT P.historiaclinica.id FROM Paciente P WHERE P.id = :id")
+    @Query("SELECT P.historiaClinica.id FROM Paciente P WHERE P.id = :id")
     List<Consulta> findHistoriaClinica(@Param ("id") Long dni);
     
-    @Query("SELECT P FROM Paciente P WHERE P.obrasocial.id = :obraSocial")
-    List<Paciente> findByObraSocial(@Param ("obraSocial") Long obraSocial);
+    @Query("SELECT P FROM Paciente P WHERE P.obraSocial.id = :obraSocialId")
+    List<Paciente> findByObraSocial(@Param ("obraSocialId") Long obraSocialId);
 
 }
