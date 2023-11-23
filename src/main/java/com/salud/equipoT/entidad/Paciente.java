@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,18 +25,14 @@ public class Paciente {
     @Id
     @Column(name = "id")
     private Long dni;
-    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "email")
     private String email;
-    @Column(name = "password")
     private String password;
-    @OneToOne()
-    @JoinColumn(name = "obraSocial_id" ,referencedColumnName = "id")
+    @ManyToOne()
+    @JoinColumn(name = "obra_social_id", referencedColumnName = "id")
     private ObraSocial obraSocial;
     @OneToOne()
-    @JoinColumn(name = "historiaClinica_id" ,referencedColumnName = "id")
-    private HistoriaClinica hitoriaClinica;
+    private HistoriaClinica historiaClinica;
     @Enumerated(EnumType.STRING)
     private Rol rol;
 

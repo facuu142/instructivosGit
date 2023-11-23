@@ -9,9 +9,8 @@
     
     <div>
         <form th:action="@{/paciente/registro}" method="POST">
-            <input type="text" name="nombrePaciente" placeholder="Paciente" required><br/>
+            <input type="text" name="nombre" placeholder="Paciente" required><br/>
             <input type="number" name="id" placeholder="DNI" required><br/>
-
             <input type="text" name="email" placeholder="Email" required><br/>
             <input type="text" name="password" placeholder="Password" required>
             <br>
@@ -21,7 +20,7 @@
                     th:value="${obraSocial.id}"
                     th:text="${obraSocial.nombre}"
                     ></option>
-                    <option>No tengo</option>
+                    <option th:value=null >No tengo</option>
 
 
             </select>
