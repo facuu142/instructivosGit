@@ -22,20 +22,14 @@ public class Paciente {
 
     
     @Id
-    @Column(name = "id")
-    private Long dni;
-    @Column(name = "nombre")
+    private Long id;
     private String nombre;
-    @Column(name = "email")
     private String email;
-    @Column(name = "password")
     private String password;
     @OneToOne()
-    @JoinColumn(name = "obraSocial_id" ,referencedColumnName = "id")
-    private ObraSocial obraSocial;
+    private ObraSocial obrasocial;
     @OneToOne()
-    @JoinColumn(name = "historiaClinica_id" ,referencedColumnName = "id")
-    private HistoriaClinica hitoriaClinica;
+    private HistoriaClinica historiaclinica;
     @Enumerated(EnumType.STRING)
     private Rol rol;
 

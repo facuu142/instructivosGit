@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.salud.equipoT.entidad.Consulta;
 import com.salud.equipoT.entidad.ObraSocial;
 import com.salud.equipoT.entidad.Paciente;
 import com.salud.equipoT.entidad.Rol;
@@ -19,7 +18,7 @@ public class PacienteService {
 
     public void crearPaciente(Long dni, String nombre, String email, String password, ObraSocial obraSocial) {
         Paciente paciente = new Paciente();
-        paciente.setDni(dni);
+        paciente.setId(dni);
         paciente.setNombre(nombre);
         paciente.setEmail(email);
         paciente.setPassword(password);
@@ -51,7 +50,7 @@ public List<Paciente> listarPacientesObraSocial(ObraSocial obraSocial){
 return pacienteRepository.findByObraSocial(obraSocial.getId());
 }
 */
-    public void validar(Long dni, String nombre, String email, String password) throws Exception{
+    public void validar(Long id, String nombre, String email, String password) throws Exception{
 
         if(nombre.isBlank()){
             throw new Exception("el nombre no puede ser nulo o estar vacio");
